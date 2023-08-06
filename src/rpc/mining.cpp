@@ -692,7 +692,7 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
     result.push_back(Pair("previousblockhash", pblock->hashPrevBlock.GetHex()));
     result.push_back(Pair("transactions", transactions));
     result.push_back(Pair("coinbaseaux", aux));
-    result.push_back(Pair("coinbasevalue", (int64_t)pblock->vtx[0]->vout[0].nValue));
+    result.push_back(Pair("coinbasevalue", (int64_t)pblock->vtx[0]->GetValueOut()));
     result.push_back(Pair("ProofOfGameplayAddress", GetParams().ProofOfGameplayAddress()));
     result.push_back(Pair("ProofOfGameplayValue", (int64_t)pblock->vtx[0]->vout[1].nValue) );
     result.push_back(Pair("DevFundAddress", GetParams().DevFundAddress()));
